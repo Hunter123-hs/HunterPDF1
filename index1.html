@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<style>
+  #header {
+    display: flex;
+    box-shadow: 10px 5px 20px 5px;
+    transition: 0.5s;
+    background-color: white;
+  }
+
+  .div1 {
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+  }
+
+  .div2 {
+    display: flex;
+    gap: 3rem;
+
+  }
+
+  .a1 {
+    position: relative;
+    top: 2rem;
+    font-size: 1.rem;
+    transition: 0.5s;
+  }
+
+  .a2 {
+    position: relative;
+    top: 2rem;
+    font-size: 1.rem;
+  }
+
+  .a3 {
+    position: relative;
+    top: 2rem;
+    font-size: 1.rem;
+  }
+
+  .hunter {
+    position: relative;
+    top: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .p1 {
+    border: none;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    border-radius: 15px;
+    transition: 0.5s;
+    background-color: #00abf0;
+    font-size: 1.5rem;
+
+  }
+
+  
+
+  .p2 {
+    border: none;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    border-radius: 15px;
+    transition: 0.5s;
+    background-color: #00abf0;
+    font-size: 1.5rem;
+
+  }
+
+  
+
+  body {
+    background-image: url(./q2.jpg);
+    background-size: cover;
+  }
+
+  .jp1 {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    font-size: 3rem;
+  }
+
+  .hs {
+    position: absolute;
+    bottom: 75%;
+  }
+
+  .mm {
+    font-size: 1.2rem;
+    position: relative;
+    top: 1rem;
+    right: 10rem;
+  }
+
+  .cov {
+    cursor: pointer;
+    font-size: 2rem;
+    width: 270px;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+     background-color: #00abf0;
+    transition: 0.5s;
+  }
+
+  .cov:hover {
+    background-color: rgb(221, 74, 21);
+   
+  }
+</style>
+
+<body>
+  <header id="header">
+    <div class="div1">
+      <a href="index.html" style="text-decoration: none;"><p style="font-size: 1.5rem; color:  #00abf0;">Home</p></a>
+      <a href="index2.html" class="a1" style="text-decoration: none; color: black; cursor: pointer;">JPG TO PDF</a>
+      <a href="index4.html" class="a2" style="text-decoration: none; color: black; cursor: pointer;">PDF TO JPG</a>
+      <a href="" class="a3" style="text-decoration: none; color: black; cursor: pointer;">IMAGE TO PDF</a>
+      <div class="div2">
+        <a href="index3.html" style="text-decoration: none; color: black;"><p class="p1" style="cursor: pointer;">login</p></a>
+        <a href="index5.html" style="text-decoration: none; color: black;"><p class="p1" style="cursor: pointer;">Sign up</p></a>
+      </div>
+    </div>
+
+    <main class="jp1">
+      <div class="hs1">
+        <p class="hs">IMAGE TO PDF</p>
+        <p class="mm">Convert JPG images to PDF in seconds. Easily adjust orientation and margins.</p>
+        <input type="file" id="imageInput" accept="image/jpeg"
+          style="position:relative;top: 3rem; height: 100px; font-size: 1.5rem;  color: rgb(240, 86, 25);" />
+        <br><br>
+        <button onclick="convertToPDF()" class="cov">Dawnload PDF</button>
+
+        <div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+
+      async function convertToPDF() {
+        const fileInput = document.getElementById('imageInput');
+        if (!fileInput.files.length) {
+          alert("Please select a JPG file.");
+          return;
+        }
+
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+
+        reader.onload = async function (e) {
+          const { jsPDF } = window.jspdf;
+          const pdf = new jsPDF();
+
+          const img = new Image();
+          img.src = e.target.result;
+
+          img.onload = function () {
+            const imgWidth = 210; // A4 width in mm
+            const imgHeight = (img.height * imgWidth) / img.width;
+
+            pdf.addImage(img, 'JPEG', 0, 0, imgWidth, imgHeight);
+            pdf.save("converted.pdf");
+          };
+        };
+
+        reader.readAsDataURL(file);
+      }
+    </script>
+</body>
+
+</html>

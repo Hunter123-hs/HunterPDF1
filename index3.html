@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    background-image: url(./Covert-Photo-to-PDF.png);
+    background-size: cover;
+
+  }
+
+  .rajan {
+    justify-content: center;
+    border: 3px solid black;
+    width: 300px;
+    height: 350px;
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    border-radius: 25px;
+
+  }
+
+  .p1 {
+    color: black;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  #id1 {
+    border: 2px solid black;
+    position: relative;
+    left: 9%;
+    font-size: 1.2rem;
+    border-radius: 15px;
+  }
+
+  #id2 {
+    border: 2px solid black;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    position: relative;
+    left: 9%;
+  }
+
+  .on {
+    border: none;
+    font-size: 1.6rem;
+    width: 150px;
+    height: 35px;
+    position: relative;
+    left: 25%;
+    border-radius: 20px;
+    background-color: #00abf0;
+    transition: .05s;
+    cursor: pointer;
+  }
+
+  .on:hover {    background-color: rgb(231, 52, 21);
+
+    ;
+  }
+
+  .p3 {
+    font-size: 1.5rem;
+    position: relative;
+    left: 20%;
+    top: 1.6rem;
+    color: rgb(39, 39, 219);
+    cursor: pointer;
+    text-decoration: none;
+
+  }
+
+  .p2 {
+    position: relative;
+    top: 1rem;
+    left: 20%;
+  }
+
+  .hs3 {
+    display: flex;
+    gap: 10px;
+  }
+
+  .p4 {
+    color: black;
+    font-size: 1.5rem;
+    text-align: center;
+
+  }
+</style>
+
+<body>
+  <div class="rajan">
+    <div class="hs1">
+      <p class="p1">Login</p>
+      <div class="hs2">
+        <label for=""><input type="text" placeholder="  username" id="id1"></label><br><br>
+        <label for=""><input type="password" placeholder="  Password" id="id2"></label><br><br>
+        <button onclick="login" class="on">login</button>
+        <div class="hs3">
+          <p class="p2">Forget Password ?</p>
+          <a href="index5.html" class="p3">Sign</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main class="main1">
+    <div class="m1">
+      <p class="p4"> Every tool you need to use PDFs, at your fingertips. All are 100% <br> FREE and easy to use! Merge,
+        split,
+        compress, convert, rotate, unlock and watermark PDFs with just a few clicks.</p>
+      </p>
+
+    </div>
+  </main>
+  <script>
+    function login() {
+  const username = document.getElementById("id1").value;
+  const password = document.getElementById("id2").value;
+
+
+  const validUsername = "admin";
+  const validPassword = "1234";
+
+  if (username === validUsername && password === validPassword) {
+    alert("Login successful!");
+   
+    window.location.href = "dashboard.html";
+  } else {
+    alert("Invalid username or password!");
+  }
+}
+  </script>
+</body>
+
+</html>

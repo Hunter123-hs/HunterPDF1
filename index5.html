@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  body{
+    background-image: url(./image\ copy.png);
+    background-size: cover;
+  }
+  .div1{
+    justify-content: center;
+    width: 350px;
+    height: 500px;
+    border: 3px solid;
+    position: absolute;
+    top:18% ;
+    left: 20%;
+    border-radius: 20px;
+  }
+  .sign{
+    font-size: 2rem;
+    text-align: center;
+  }
+  .div2{
+    font-size: 1.5rem;
+    position: relative;
+    bottom: 5%;
+    left: 22%;
+
+  }
+  #name{
+    width: 200px;
+    height: 20px;
+    border-radius: 20px;
+  }
+   #username{
+    width: 200px;
+    height: 20px;
+    border-radius: 20px;
+  }
+   #email{
+    width: 200px;
+    height: 20px;
+    border-radius: 20px;
+  }
+   #password{
+    width: 200px;
+    height: 20px;
+    border-radius: 20px;
+  }
+   #confirmPassword{
+    width: 200px;
+    height: 20px;
+    border-radius: 20px;
+  }
+  #submit1{
+    border: none;
+    width: 150px;
+    height: 40px;
+    font-size: 1.5rem;
+    position: relative;
+    left: 7%;
+    border-radius: 20px;
+    background-color: #00abf0;
+    transition: 0.5s;
+  }
+  #submit1:hover{
+    background-color:  rgb(231, 52, 21);
+  }
+  .p4{
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .div4{
+    display: flex;
+  }
+  .p5{
+    font-size: 1rem;
+  }
+  .a1{
+    position: relative;
+    top: 0.7rem;
+    text-decoration: none;
+  }
+</style>
+<body>
+  <p class="p4"> Every tool you need to use PDFs, at your fingertips. All are 100% <br> FREE and easy to use! Merge,
+        split,
+        compress, convert, rotate, unlock and watermark PDFs with just a few clicks.</p>
+    <form>
+      <div class="div1">
+        <p class="sign">Sign</p>
+        <div class="div2">
+<input type="text" id="name" placeholder="Name" /><br><br>
+  <input type="text" id="username" placeholder="Username" /><br><br>
+  <input type="email" id="email" placeholder="Email" /><br><br>
+  <input type="password" id="password" placeholder="Password" /><br><br>
+  <input type="password" id="confirmPassword" placeholder="Confirm Password" /><br><br>
+ <button type="submit" id="submit1">Sign</button>
+ <div class="div4">
+  <p class="p5">Foreget password ?</p>
+  <a href="index3.html" class="a1">Login</a>
+ </div>
+   </div>
+        
+</div>
+</form>
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.querySelector("#name").value.trim();
+    const username = document.querySelector("#username").value.trim();
+    const email = document.querySelector("#email").value.trim();
+    const password = document.querySelector("#password").value;
+    const confirmPassword = document.querySelector("#confirmPassword").value;
+
+    if (!name || !username || !email || !password || !confirmPassword) {
+      alert("Please fill in form.");
+      return;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email.");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+
+    alert("Registration Successful!");
+    form.reset(); 
+  });
+}); 
+</script>
+</body>
+</html>
