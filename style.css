@@ -1,0 +1,106 @@
+
+
+#header{
+    background-color: white;
+    display: flex;
+    box-shadow: 10px 5px 20px 5px;
+    transition: 0.5s;
+}
+
+.div1{
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+}
+.div2{
+    display: flex;
+    gap: 3rem;
+    
+}
+.a1{
+    position: relative;
+    top: 2rem;
+    font-size: 1.rem;
+    transition: 0.5s;
+}
+
+.a2{
+    position: relative;
+    top: 2rem;
+    font-size: 1.rem;
+}
+.a3{
+    position: relative;
+    top: 2rem;
+    font-size: 1.rem;
+}
+.hunter{
+    position: relative;
+    top: 2rem;
+   text-align: center;
+   font-size: 1.5rem;
+}
+.p1{
+    border: none;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: #00abf0;
+    transition: 0.5s;
+    font-size: 1.5rem;
+   
+}
+
+.p2{
+    border: none;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    border-radius: 15px;
+      background-color: #00abf0;
+     transition: 0.5s;
+         font-size: 1.5rem;
+
+}
+
+.page1{
+    font-size: 2.5rem;
+}
+.dd{
+   
+    display: flex;
+    gap: 10%;
+    position: relative;
+    left: 8%;
+    top: 5rem;
+    font-size: 2rem;
+}
+.dd1{
+    border: 3px solid;
+    width: 300px;
+    height: 200px;
+    justify-content: center;
+    background-image: url(image\ copy.png);
+    background-size: cover;
+    border-radius: 20px;
+    border: 3px solid rgb(194, 192, 190);
+ }
+.dd2{
+    border-radius: 20px;
+    border: 3px solid rgb(194, 192, 190);
+    width: 300px;
+    height: 200px;
+    background-image: url(./image\ copy\ 2.png);
+    background-size: cover;
+ }
+
+.dd3{
+    
+    border-radius: 20px;
+    border: 3px solid rgb(194, 192, 190);
+    width: 300px;
+    height: 200px;
+    background-image: url(./image\ copy\ 3.png);
+    background-size: cover;
+ }
